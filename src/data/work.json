@@ -1,0 +1,72 @@
+[
+  {
+    "company": "Intuit",
+    "location": "Edmonton, Alberta",
+    "position": "Software Developer Co-op",
+    "date": "Jan 2019 - Jan 2020",
+    "companyDescription": "Intuit is a financial software company that focuses on selling financial, accounting, and tax software. Clients range from an individual, accountant, or small businesses. The headquarters is stationed in Mountain View, California. Their main products consists of QuickBooks Online (QBO), TurboTax, and Mint. Software developers in Edmonton are assigned to work on QuickBooks, with just over 5 million users.",
+    "workDescription": [
+      "12-month internship prior to the last semester of my undergraduate degree. The position is focused heavily on front-end development.",
+      "Focused on Taxonomy in QuickBooks. Our goal was to implement the features throughout all plugins of QBO.",
+      "Assigned to the front-end development of a new tags feature, primarily responsible for the main dashboard that handles all tag transactions."
+    ],
+    "achievements": [
+      "The prototype for the tag features has been showcased in QuickBooks Connect, a global conference for ~4000 accountants and small business owners. The demonstration was flawless with very postive and enthusiastic responses.",
+      "Implemented and released an analytics library internally for QBO. The impact will be seen for years from marketing and engineering teams utilizing it to construct better business solutions.",
+      "Redesigned a legacy plugin test suite, reducing test runtimes by over 60% (9 -> 3 mins) and memory usage by 50% (3GB -> 1.5GB). A heavy MVC component had unknown memory leaks and long initialization times. Both were reduced via use of a singleton pattern and initialized only when required."
+    ],
+    "logo": "./images/intuit-logo.png"
+  },
+  {
+    "company": "University of Alberta",
+    "location": "Edmonton, Alberta",
+    "position": "Undergraduate Teaching Assistant",
+    "date": "May 2018 - June 2018 | Jan 2020 - April 2020",
+    "companyDescription": "The University of Alberta is known for their engineering programs and their contribution to AI research. Students who excelled in an undergraduate course are sometimes given opportunities to TA for that course the following semester, or even a graduate level course from a Professor.",
+    "workDescription": [
+      "Undergraduate TA for Spring 2018 in CMPUT 101 and Winter 2020 in CMPUT 175.",
+      "Presented on various topics starting from basics of computing upwards to data structures.",
+      "Proctored and marked exams throughout the semester as needed.",
+      "Following COVID-19, helped designed an online system for the lab sessions via Discord bots to move towards online sessions."
+    ],
+    "achievements": [
+      "End of semester reviews in for CMPUT 101 had been overwhelmly positive",
+      "Performance overall by students in my lab sessions has been above average compared to the rest of the class."
+    ],
+    "logo": "./images/uofa-logo.png"
+  },
+  {
+    "company": "Alberta Health Services",
+    "location": "Edmonton, Alberta",
+    "position": "Systems Analyst Co-op",
+    "date": "Sept 2017 - Apr 2018",
+    "companyDescription": "Alberta Health Services (AHS) have many sectors internally that help keep up the demand of healthcare in Alberta. The main HQ for AHS is in Edmonton, where all the financial inquiries are handled.",
+    "workDescription": [
+      "Specifically assigned to Contracting, Procurement & Supply Management (CPSM), all third-party contracts with AHS are handled by our program.",
+      "Juggled between developing features for the main CPSM program and handling monthly data migrations of transactions to a data warehouse"
+    ],
+    "achievements": [
+      "Redesigned a reports generator used yearly for auditing all contracts with AHS, reducing environmental impact via paper load by 22%",
+      "Implemented SQL guards throughout the data migration process, preventing possible rollbacks due to broken data integrity which requires 1-2 days to reverse."
+    ],
+    "logo": "./images/ahs-logo.png"
+  },
+  {
+    "company": "City of Edmonton",
+    "location": "Edmonton, Alberta",
+    "position": "Lifeguard",
+    "date": "Nov 2014 - Current",
+    "companyDescription": "The City of Edmonton oversees all municipal operations within the city. Specifically, Community Services communicates regularly with Canadian Red Cross to uphold and improve procedures with emergencies in public areas such as Recreation Centers",
+    "workDescription": [
+      "Act in leadership roles during facility emergencies, prioritizing customer safety and minimizing property damage",
+      "Oversee swimmers and enforce rules to prevent any potenial injuries.",
+      "Mentor new lifeguards with current pool or mechanical procedures.",
+      "Defuse conflicts between disgruntled patrons to encourage patron retention and comfort."
+    ],
+    "achievements": [
+      "Prevented disabling injuries involved with medical emergencies through quick response and treatment. Past victims have still returned to use our amentities despite any conflicts.",
+      "Quick response to mechanical and chemical changes in the pool have ensured that health standards are upheld and do not cause facility shutdowns due to unsafe situations."
+    ],
+    "logo": "./images/coe-logo.png"
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "backend": ["NODEJS", "PYTHON", "FLASK", "SQLITE"],
+  "database": ["SQLITE", "POSTGRESQL"],
+  "frontend": ["JAVASCRIPT", "TYPESCRIPT", "REACT", "HTML", "CSS"],
+  "tools": ["GIT", "VSCODE"]
+}

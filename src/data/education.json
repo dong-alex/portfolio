@@ -1,0 +1,15 @@
+[
+  {
+    "institution": "University of Alberta",
+    "location": "Edmonton, Alberta",
+    "degree": "BSc in Computer Science, Mathematics Minor",
+    "graduation": "April 2020",
+    "logo": "./images/uofa-logo.png",
+    "courses": [
+      "CMPUT 366 - Reinforcement Learning",
+      "CMPUT 296 - Basics of Machine Learning",
+      "CMPUT 401 - Software Process and Product Management",
+      "CMPUT 403 - Practical Algorithms"
+    ]
+  }
+]

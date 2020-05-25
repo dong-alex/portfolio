@@ -1,0 +1,92 @@
+[
+  {
+    "id": "REACT",
+    "name": "React",
+    "logo": "./images/react-logo.png"
+  },
+  {
+    "id": "PYTHON",
+    "name": "Python",
+    "logo": "./images/python-logo.png"
+  },
+  {
+    "id": "CPP",
+    "name": "C++",
+    "logo": "./images/cpp-logo.png"
+  },
+  {
+    "id": "JEST",
+    "name": "Jest",
+    "logo": "./images/jest-logo.png"
+  },
+  {
+    "id": "FLASK",
+    "name": "Flask",
+    "logo": "./images/flask-logo.png"
+  },
+  {
+    "id": "MATERIAL-UI",
+    "name": "Material-UI",
+    "logo": "./images/material-ui-logo.png"
+  },
+  {
+    "id": "MICROSOFT-CLOUD-SERVICES",
+    "name": "Microsoft Cloud Services",
+    "logo": "./images/cloud-logo.png"
+  },
+  {
+    "id": "EXPRESSJS",
+    "name": "ExpressJS",
+    "logo": "./images/express-logo.png"
+  },
+  {
+    "id": "NODEJS",
+    "name": "NodeJS",
+    "logo": "./images/node-logo.png"
+  },
+  {
+    "id": "BOOTSTRAP",
+    "name": "Bootstrap",
+    "logo": "./images/bootstrap-logo.png"
+  },
+  {
+    "id": "SQLITE",
+    "name": "SQLite",
+    "logo": "./images/sqlite-logo.png"
+  },
+  {
+    "id": "JAVASCRIPT",
+    "name": "JavaScript",
+    "logo": "./images/javascript-logo.png"
+  },
+  {
+    "id": "HTML",
+    "name": "HTML",
+    "logo": "./images/html-logo.png"
+  },
+  {
+    "id": "CSS",
+    "name": "CSS",
+    "logo": "./images/css-logo.png"
+  },
+  {
+    "id": "POSTGRESQL",
+    "name": "PostgreSQL",
+    "logo": "./images/postgres-logo.png"
+  },
+  {
+    "id": "GIT",
+    "name": "Git",
+    "logo": "./images/git-logo.png"
+  },
+  {
+    "id": "VSCODE",
+    "name": "Visual Studio Code",
+    "logo": "./images/vscode-logo.png"
+  },
+  {
+    "id": "TYPESCRIPT",
+    "name": "TypeScript",
+    "logo": "./images/typescript-logo.png"
+  }
+]

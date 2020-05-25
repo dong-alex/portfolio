@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Github",
+    "url": "https://github.com/dong-alex",
+    "logo": "./images/github-dark-logo.png"
+  },
+  {
+    "name": "LinkedIn",
+    "url": "https://www.linkedin.com/in/dongalex/",
+    "logo": "./images/linkedin-logo.png"
+  }
+]
