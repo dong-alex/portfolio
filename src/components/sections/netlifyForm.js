@@ -54,9 +54,15 @@ const NetlifyForm = () => {
         method="POST"
         data-netlify="true"
         data-netlify-recaptcha="true"
+        netlify-honeypot="bot-field"
         action="/thank-you"
       >
         <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden">
+          <label>
+            Don’t fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text">Email</span>
@@ -98,7 +104,10 @@ const NetlifyForm = () => {
           />
         </div>
         {enableCaptcha && (
-          <CaptchaContainer sitekey={process.env.GATSBY_RECAPTCHA_KEY} />
+          <CaptchaContainer
+            sitekey={process.env.GATSBY_RECAPTCHA_KEY}
+            theme="dark"
+          />
         )}
         <input type="submit" value="Submit" class="btn btn-dark btn-block" />
       </form>
