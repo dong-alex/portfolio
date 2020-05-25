@@ -1,17 +1,28 @@
 html,
-body,
-#___gatsby {
-  height: 100vh;
+body {
+  height: 100%;
   overflow: auto;
 }
 
-.tl-edges,
-.tl-wrapper {
-  min-height: 100vh;
+div#___gatsby {
+  height: 100%;
+  width: 100%;
+  margin: 0;
 }
 
-#gatsby-focus-wrapper {
-  height: 100%;
+div.tl-edges,
+div.tl-wrapper {
+  position: unset !important;
+  transform: none !important;
+}
+
+.particles-js-canvas-el {
+  height: 100% !important;
+  z-index: 0;
+}
+
+div#gatsby-focus-wrapper {
+  height: 100% !important;
 }
 
 main > p,
