@@ -9,6 +9,7 @@ const ResumeLink = styled.a`
   font-size: 1.5rem;
   margin-bottom: 2rem;
   display: flex;
+  color: #ffffff;
   justify-content: center;
 `
 

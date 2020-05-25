@@ -55,12 +55,6 @@ const EducationSection = () => {
     <EducationContainer fluid>
       <Header>
         <h2>Education</h2>
-        {/* <Image
-          draggable={false}
-          fadeIn={false}
-          fixed={graduationHat.childImageSharp.fixed}
-          style={{ marginLeft: "1rem", padding: "0px" }}
-        /> */}
       </Header>
       <EducationCard className="text-center">
         <ImageContainer>

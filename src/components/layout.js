@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
 import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import Navbar from "react-bootstrap/Navbar"
@@ -43,7 +42,7 @@ const StyledNav = styled(Nav)`
 `
 
 const Container = styled.main`
-  margin: 6rem auto 0 auto;
+  margin: 6rem auto 6rem auto;
   max-width: 800px;
   height: 100%;
   font-family: Balsamiq Sans;
