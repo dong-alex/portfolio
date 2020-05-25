@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import styled from "styled-components"
 
 const Header = styled.span`
@@ -8,35 +8,17 @@ const Header = styled.span`
 `
 
 const NetlifyForm = () => {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [message, setMessage] = useState("")
-
-  const handleMessageChange = event => {
-    console.log(event.target.value)
-    setMessage(event.target.value)
-  }
-
-  const handleNameChange = event => {
-    console.log(event.target.value)
-    setName(event.target.value)
-  }
-
-  const handleEmailChange = event => {
-    console.log(event.target.value)
-    setEmail(event.target.value)
-  }
-
-  const handleSubmit = () => {
-    console.log(name, email, message)
-  }
-
   return (
     <>
       <Header>
         <h2>Contact</h2>
       </Header>
-      <form name="contact" method="POST" data-netlify="true">
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        action="/thank-you"
+      >
         <input type="hidden" name="form-name" value="contact" />
         <div class="input-group mb-3">
           <div class="input-group-prepend">
