@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container"
 import SEO from "../components/seo"
 import LinkedInLogo from "../static/linkedin.svg"
 import GithubLogo from "../static/github.svg"
+import NetlifyForm from "../components/netlifyForm"
 
 const ContactContainer = styled(Container)`
   display: flex;
@@ -46,6 +47,7 @@ const ConnectPage = () => {
           <ContactLogo src={LinkedInLogo} alt="linkedin" />
         </a>
       </ContactContainer>
+      <NetlifyForm />
     </Layout>
   )
 }
