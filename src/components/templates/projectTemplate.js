@@ -1,8 +1,7 @@
 import React from "react"
-import Image from "gatsby-image"
-import { Link } from "gatsby"
-
 import Card from "react-bootstrap/Card"
+import { Link } from "gatsby"
+import Image from "gatsby-image"
 import styled from "styled-components"
 import LogoItem from "../logoItem"
 

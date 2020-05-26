@@ -1,7 +1,7 @@
 import { useStaticQuery, graphql } from "gatsby"
 
 const useTechnicalSkills = () => {
-  const { gear, skills } = useStaticQuery(graphql`
+  const { skills } = useStaticQuery(graphql`
     query {
       skills: allDataJson {
         nodes {
@@ -10,7 +10,7 @@ const useTechnicalSkills = () => {
             logo {
               childImageSharp {
                 fixed(width: 32, height: 32, quality: 100, fit: INSIDE) {
-                  ...GatsbyImageSharpFixed
+                  ...GatsbyImageSharpFixed_noBase64
                 }
               }
             }
@@ -20,7 +20,7 @@ const useTechnicalSkills = () => {
             logo {
               childImageSharp {
                 fixed(height: 32, width: 32, quality: 100, fit: INSIDE) {
-                  ...GatsbyImageSharpFixed
+                  ...GatsbyImageSharpFixed_noBase64
                 }
               }
             }
@@ -30,7 +30,7 @@ const useTechnicalSkills = () => {
             logo {
               childImageSharp {
                 fixed(height: 32, width: 32, quality: 100, fit: INSIDE) {
-                  ...GatsbyImageSharpFixed
+                  ...GatsbyImageSharpFixed_noBase64
                 }
               }
             }
@@ -40,17 +40,10 @@ const useTechnicalSkills = () => {
             logo {
               childImageSharp {
                 fixed(height: 32, width: 32, quality: 100, fit: INSIDE) {
-                  ...GatsbyImageSharpFixed
+                  ...GatsbyImageSharpFixed_noBase64
                 }
               }
             }
-          }
-        }
-      }
-      gear: file(relativePath: { eq: "images/gear-icon.png" }) {
-        childImageSharp {
-          fixed(width: 40, height: 40, quality: 100, fit: INSIDE) {
-            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -58,7 +51,6 @@ const useTechnicalSkills = () => {
   `)
 
   return {
-    gear,
     ...skills.nodes[0],
   }
 }

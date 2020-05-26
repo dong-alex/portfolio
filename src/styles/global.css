@@ -2,12 +2,22 @@ html,
 body {
   height: 100%;
   overflow: auto;
+  user-select: none;
 }
 
 div#___gatsby {
   height: 100%;
   width: 100%;
   margin: 0;
+}
+
+img {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 div.tl-edges,

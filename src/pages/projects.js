@@ -28,7 +28,7 @@ const ProjectsPage = () => {
                 logo {
                   childImageSharp {
                     fixed(width: 40, height: 40, quality: 100, fit: INSIDE) {
-                      ...GatsbyImageSharpFixed
+                      ...GatsbyImageSharpFixed_noBase64
                     }
                   }
                 }
@@ -38,7 +38,7 @@ const ProjectsPage = () => {
                 publicURL {
                   childImageSharp {
                     fluid(quality: 100, fit: INSIDE) {
-                      ...GatsbyImageSharpFluid
+                      ...GatsbyImageSharpFluid_noBase64
                     }
                   }
                 }
@@ -49,7 +49,7 @@ const ProjectsPage = () => {
         github: file(relativePath: { eq: "images/github-logo.png" }) {
           childImageSharp {
             fixed(width: 64, height: 64) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_noBase64
             }
           }
         }

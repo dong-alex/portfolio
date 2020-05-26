@@ -8,11 +8,27 @@ const ParticleBackground = () => {
       height="100%"
       params={{
         particles: {
+          line_linked: {
+            shadow: {
+              enable: true,
+              color: "#3CA9D1",
+              blur: 5,
+            },
+          },
           number: {
-            value: 50,
+            value: 30,
           },
           size: {
             value: 3,
+          },
+        },
+        interactivity: {
+          detect_on: "window",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "repulse",
+            },
           },
         },
       }}
@@ -23,7 +39,7 @@ const ParticleBackground = () => {
         right: "0",
         bottom: "0",
         backgroundColor: "#212121",
-        zIndex: "-500",
+        zIndex: "-1",
       }}
     />
   )

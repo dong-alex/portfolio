@@ -5,7 +5,7 @@ const useResume = () => {
     query {
       preview: file(relativePath: { eq: "images/resume-preview.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(maxHeight: 900, maxWidth: 800, quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }

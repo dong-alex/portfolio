@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import styled from "styled-components"
 import ReCAPTCHA from "react-google-recaptcha"
 import Alert from "react-bootstrap/Alert"
+import styled from "styled-components"
 
 const Header = styled.span`
   display: flex;
@@ -24,11 +24,11 @@ const NetlifyForm = () => {
   const [show, setShow] = useState(false)
   const [error, setError] = useState(false)
 
-  const isFormComplete = () => {
-    return email !== "" && message !== ""
-  }
-
   useEffect(() => {
+    const isFormComplete = () => {
+      return email !== "" && message !== ""
+    }
+
     if (isFormComplete()) {
       setEnableSubmission(true)
     } else {

@@ -1,8 +1,8 @@
 import React from "react"
-import styled from "styled-components"
-
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import styled from "styled-components"
 import ArrowRightCircle from "../static/arrow-right-circle.svg"
+
 const StyledLink = styled(AniLink)`
   user-select: none;
   margin: 0 0 0 0.8rem;

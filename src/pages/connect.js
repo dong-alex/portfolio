@@ -1,8 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Image from "gatsby-image"
 import Layout from "../components/layout"
-import useContacts from "../components/hooks/useContacts"
 import SEO from "../components/seo"
 import NetlifyForm from "../components/sections/netlifyForm"
 import ContactSection from "../components/sections/contact"
@@ -13,7 +11,6 @@ const Header = styled.span`
 `
 
 const ConnectPage = () => {
-  const { contacts } = useContacts()
 
   return (
     <Layout>

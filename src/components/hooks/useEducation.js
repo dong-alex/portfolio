@@ -2,7 +2,6 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const useEducation = () => {
   const {
-    graduationHat,
     education: { location, courses, institution, graduation, logo, degree },
   } = useStaticQuery(graphql`
     query {
@@ -15,17 +14,8 @@ const useEducation = () => {
         logo {
           childImageSharp {
             fixed(height: 200, width: 200, quality: 100, fit: INSIDE) {
-              ...GatsbyImageSharpFixed
+              ...GatsbyImageSharpFixed_noBase64
             }
-          }
-        }
-      }
-      graduationHat: file(
-        relativePath: { eq: "images/graduation-white-logo.png" }
-      ) {
-        childImageSharp {
-          fixed(width: 40, height: 40, quality: 100, fit: INSIDE) {
-            ...GatsbyImageSharpFixed
           }
         }
       }
@@ -33,7 +23,6 @@ const useEducation = () => {
   `)
 
   return {
-    graduationHat,
     location,
     institution,
     courses,

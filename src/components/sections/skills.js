@@ -1,5 +1,4 @@
 import React from "react"
-import Image from "gatsby-image"
 import styled from "styled-components"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
@@ -34,7 +33,7 @@ const Header = styled.span`
 `
 
 const SkillsSection = () => {
-  const { backend, frontend, database, tools, gear } = useTechnicalSkills()
+  const { backend, frontend, database, tools } = useTechnicalSkills()
 
   const layout = [
     { title: "Front-end", data: frontend },

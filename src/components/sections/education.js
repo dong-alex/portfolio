@@ -1,9 +1,9 @@
 import React from "react"
-import Image from "gatsby-image"
-import styled from "styled-components"
 import ListGroup from "react-bootstrap/ListGroup"
 import Card from "react-bootstrap/Card"
 import Container from "react-bootstrap/Container"
+import Image from "gatsby-image"
+import styled from "styled-components"
 import useEducation from "../hooks/useEducation"
 
 const Header = styled.span`
@@ -49,7 +49,7 @@ const CourseItem = styled(ListGroup.Item)`
 `
 
 const EducationSection = () => {
-  const { graduationHat, courses, logo, degree } = useEducation()
+  const { courses, logo, degree } = useEducation()
 
   return (
     <EducationContainer fluid>

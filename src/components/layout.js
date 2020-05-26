@@ -1,10 +1,10 @@
 import React from "react"
 import { Helmet } from "react-helmet"
-import styled from "styled-components"
+import Loadable from "react-loadable"
 import Navbar from "react-bootstrap/Navbar"
 import Nav from "react-bootstrap/Nav"
-import Loadable from "react-loadable"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
+import styled from "styled-components"
 
 const NavLink = styled(AniLink)`
   margin-right: 1rem;

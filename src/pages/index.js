@@ -6,12 +6,13 @@ import SEO from "../components/seo"
 import RedirectLink from "../components/redirectLink"
 
 const HomeContainer = styled(Container)`
+  display: flex;
   height: 70vh;
   margin: 0;
   justify-content: center;
-  display: flex;
   flex-direction: column;
   overflow: hidden;
+
   h1 {
     user-select: none;
   }
