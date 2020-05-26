@@ -57,7 +57,6 @@ const NetlifyForm = () => {
   }
 
   const resetForm = () => {
-    setName("")
     setMessage("")
     setEmail("")
     setRecaptcha(null)
