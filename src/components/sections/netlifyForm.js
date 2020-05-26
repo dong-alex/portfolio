@@ -189,7 +189,7 @@ const NetlifyForm = () => {
         </div>
         {enableSubmission && (
           <CaptchaContainer
-            sitekey={process.env.SITE_RECAPTCHA_KEY}
+            sitekey={process.env.GATSBY_RECAPTCHA_KEY}
             onChange={handleRecaptcha}
             theme="dark"
           />
