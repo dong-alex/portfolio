@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import ReCAPTCHA from "react-google-recaptcha"
 import Alert from "react-bootstrap/Alert"
-import * as qs from "query-string"
 
 const Header = styled.span`
   display: flex;
@@ -80,13 +79,11 @@ const NetlifyForm = () => {
   }
 
   const handleSubmit = event => {
-    event.preventDefault()
-
-    // if (!recaptcha) {
-    //   setFeedbackMessage("Please complete the recaptcha")
-    //   setError(true)
-    //   return
-    // }
+    if (!recaptcha) {
+      setFeedbackMessage("Please complete the recaptcha")
+      setError(true)
+      return
+    }
 
     const form = event.target
 
@@ -95,7 +92,7 @@ const NetlifyForm = () => {
       email,
       message,
       "g-recaptcha-response": recaptcha,
-      "form-name": "contact",
+      "form-name": form.getAttribute("name"),
     }
 
     if (~document.location.host.indexOf("localhost")) {
@@ -105,7 +102,7 @@ const NetlifyForm = () => {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: qs.stringify(formData),
+        body: encode(formData),
       })
         .then(res => {
           console.log(res)
@@ -121,6 +118,7 @@ const NetlifyForm = () => {
           alert(err)
         })
     }
+    event.preventDefault()
   }
 
   return (
@@ -187,18 +185,13 @@ const NetlifyForm = () => {
             onChange={handleMessageChange}
           />
         </div>
-        {/* {enableSubmission && (
+        {enableSubmission && (
           <CaptchaContainer
             sitekey={process.env.GATSBY_RECAPTCHA_KEY}
             onChange={handleRecaptcha}
             theme="dark"
           />
-        )} */}
-        <ReCAPTCHA
-          sitekey={process.env.GATSBY_RECAPTCHA_KEY}
-          onChange={handleRecaptcha}
-          theme="dark"
-        />
+        )}
         <input
           disabled={!enableSubmission}
           type="submit"

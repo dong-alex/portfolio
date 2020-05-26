@@ -10,7 +10,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-recaptcha`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
