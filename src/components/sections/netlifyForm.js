@@ -3,8 +3,6 @@ import styled from "styled-components"
 import ReCAPTCHA from "react-google-recaptcha"
 import Alert from "react-bootstrap/Alert"
 
-const qs = require("query-string")
-
 const Header = styled.span`
   display: flex;
   margin-bottom: 1rem;
@@ -70,11 +68,22 @@ const NetlifyForm = () => {
     setRecaptcha(null)
   }
 
+  const encode = data => {
+    return Object.keys(data)
+      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+      .join("&")
+  }
+
+  const handleRecaptcha = value => {
+    setRecaptcha(value)
+  }
+
   const handleSubmit = event => {
     event.preventDefault()
 
-    if (!handleRecaptcha) {
+    if (!recaptcha) {
       setFeedbackMessage("Please complete the recaptcha")
+      setError(true)
       return
     }
 
@@ -96,7 +105,7 @@ const NetlifyForm = () => {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: qs.stringify(formData),
+        body: encode(formData),
       })
         .then(() => {
           setFeedbackMessage("Thank you, your inquiry has been sent.")
@@ -111,10 +120,6 @@ const NetlifyForm = () => {
           alert(err)
         })
     }
-  }
-
-  const handleRecaptcha = event => {
-    setRecaptcha(event.target.value)
   }
 
   return (
