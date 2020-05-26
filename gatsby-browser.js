@@ -2,7 +2,6 @@ import { globalHistory } from "@reach/router"
 
 import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap/dist/js/bootstrap.js"
-import "react-medium-image-zoom/dist/styles.css"
 import "./src/styles/global.css"
 
 export const onInitialClientRender = () => {
