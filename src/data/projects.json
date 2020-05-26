@@ -9,25 +9,30 @@
     },
     "technologies": ["PYTHON"],
     "extra": {
-      "projectImageURLs": [
-        "./images/pybraille-app.png",
-        "./images/pybraille-arduino.png",
-        "./images/pybraille-terminal.png"
-      ]
+      "url": "https://www.hackerearth.com/challenges/hackathon/hacked-2018-1/dashboard/38e25e1/submission/"
     }
   },
   {
-    "title": "Taxonomy Model SDK/UI",
-    "description": "A npm package replicating the SDK used in data tracking. Events are transcribed by the developer based on actions and UI targets. Distributed via local storage and flushed out on capacity or timeout. Included is a complementary project displaying the usage of the SDK. A set amount of UI elements shown to demonstrate how the SDK works. All events are flushed in the console of the browser",
+    "title": "Taxonomy SDK",
+    "description": "A npm package replicating the SDK used in data tracking. Events are transcribed by the developer based on actions and UI targets. Distributed via local storage and flushed out on capacity or timeout. Events can be stored within a database and used for marketing or technical decisions.",
+    "githubURL": "https://github.com/dong-alex/mock-amplitude-sdk",
+    "slug": "taxonomy-sdk",
+    "image": {
+      "publicURL": "./images/taxonomy-logo.png"
+    },
+    "technologies": ["REACT", "JEST"],
+    "extra": {}
+  },
+  {
+    "title": "Taxonomy Model UI",
+    "description": "Complementary project displaying the usage of the Taxonomy SDK that was developed. A set amount of UI elements shown to demonstrate how the SDK works. All events are flushed in the console of the browser",
     "githubURL": "https://github.com/dong-alex/amplitude-sdk-ui",
     "slug": "model-ui",
     "image": {
       "publicURL": "./images/taxonomy-ui-logo.png"
     },
-    "technologies": ["REACT", "JEST"],
-    "extra": {
-      "projectImageURLs": ["./images/sdk-ui.png", "./images/sdk-output.png"]
-    }
+    "technologies": ["REACT"],
+    "extra": {}
   },
   {
     "title": "Kijiji Monitor",
@@ -38,8 +43,6 @@
       "publicURL": "./images/car-logo.png"
     },
     "technologies": ["FLASK", "REACT", "MATERIAL-UI"],
-    "extra": {
-      "projectImageURLs": ["./images/kijiji-list.png", "./images/kijiji/ui.png"]
-    }
+    "extra": {}
   }
 ]

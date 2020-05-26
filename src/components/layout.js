@@ -70,7 +70,9 @@ const Layout = ({ children }) => {
         />
       </Helmet>
       <StyledNavbar bg="dark" fixed="top" expand="sm">
-        <Brand>@dong-alex</Brand>
+        <NavLink paintDrip hex="#212121" to="/">
+          <Brand>@dong-alex</Brand>
+        </NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <StyledNav>
