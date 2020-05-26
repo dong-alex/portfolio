@@ -128,10 +128,10 @@ const NetlifyForm = () => {
       <form
         name="contact"
         method="POST"
-        data-NetlifyForm
-        data-netlify-recaptcha
         netlify-honeypot="required-name"
         onSubmit={handleSubmit}
+        data-netlify
+        data-netlify-recaptcha
       >
         <input type="hidden" name="form-name" value="contact" />
         <p hidden aria-hidden>
