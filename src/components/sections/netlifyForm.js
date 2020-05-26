@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import ReCAPTCHA from "react-google-recaptcha"
+import Alert from "react-bootstrap/Alert"
+
+const qs = require("query-string")
 
 const Header = styled.span`
   display: flex;
@@ -18,7 +21,11 @@ const NetlifyForm = () => {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
-  const [enableCaptcha, setEnableCaptcha] = useState(false)
+  const [enableSubmission, setEnableSubmission] = useState(false)
+  const [feedbackMessage, setFeedbackMessage] = useState("Thank")
+  const [recaptcha, setRecaptcha] = useState("")
+  const [show, setShow] = useState(false)
+  const [error, setError] = useState(false)
 
   const isFormComplete = () => {
     return name !== "" && email !== "" && message !== ""
@@ -26,11 +33,23 @@ const NetlifyForm = () => {
 
   useEffect(() => {
     if (isFormComplete()) {
-      setEnableCaptcha(true)
+      setEnableSubmission(true)
     } else {
-      setEnableCaptcha(false)
+      setEnableSubmission(false)
     }
   }, [message, email, name])
+
+  useEffect(() => {
+    if (feedbackMessage !== "") {
+      setShow(true)
+    }
+  }, [feedbackMessage])
+
+  useEffect(() => {
+    if (!show) {
+      setFeedbackMessage("")
+    }
+  }, [show])
 
   const handleMessageChange = event => {
     setMessage(event.target.value)
@@ -44,21 +63,86 @@ const NetlifyForm = () => {
     setName(event.target.value)
   }
 
+  const resetForm = () => {
+    setName("")
+    setMessage("")
+    setEmail("")
+    setRecaptcha(null)
+  }
+
+  const handleSubmit = event => {
+    event.preventDefault()
+
+    if (!handleRecaptcha) {
+      setFeedbackMessage("Please complete the recaptcha")
+      return
+    }
+
+    const form = event.target
+
+    let formData = {
+      name,
+      email,
+      message,
+      "g-recaptcha-response": recaptcha,
+      "form-name": form.getAttribute("name"),
+    }
+
+    if (~document.location.host.indexOf("localhost")) {
+      setFeedbackMessage("Thank you, your inquiry has been sent.")
+      resetForm()
+      return
+    } else {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: qs.stringify(formData),
+      })
+        .then(() => {
+          setFeedbackMessage("Thank you, your inquiry has been sent.")
+          setError(false)
+          resetForm()
+        })
+        .catch(err => {
+          setFeedbackMessage(
+            "There was an error with your inquiry, please try again!"
+          )
+          setError(true)
+          alert(err)
+        })
+    }
+  }
+
+  const handleRecaptcha = event => {
+    setRecaptcha(event.target.value)
+  }
+
   return (
     <>
       <Header>
         <h2>Contact</h2>
       </Header>
+      {feedbackMessage && (
+        <Alert
+          show={show}
+          variant={error ? "danger" : "success"}
+          className="text-justify"
+          dismissible
+          onClose={() => setShow(false)}
+        >
+          {feedbackMessage}
+        </Alert>
+      )}
       <form
         name="contact"
         method="POST"
         data-netlify="true"
         data-netlify-recaptcha="true"
         netlify-honeypot="bot-field"
-        action="/thank-you"
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
-        <p class="hidden">
+        <p hidden aria-hidden="true">
           <label>
             Don’t fill this out if you're human: <input name="bot-field" />
           </label>
@@ -103,13 +187,21 @@ const NetlifyForm = () => {
             onChange={handleMessageChange}
           />
         </div>
-        {enableCaptcha && (
-          <CaptchaContainer
-            sitekey={process.env.GATSBY_RECAPTCHA_KEY}
-            theme="dark"
-          />
+        {enableSubmission && (
+          <>
+            <CaptchaContainer
+              sitekey={process.env.GATSBY_RECAPTCHA_KEY}
+              onChange={handleRecaptcha}
+              theme="dark"
+            />
+          </>
         )}
-        <input type="submit" value="Submit" class="btn btn-dark btn-block" />
+        <input
+          disabled={!enableSubmission}
+          type="submit"
+          value="Submit"
+          class="btn btn-dark btn-block"
+        />
       </form>
     </>
   )
