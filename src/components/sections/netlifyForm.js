@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import ReCAPTCHA from "react-google-recaptcha"
 import Alert from "react-bootstrap/Alert"
+import * as qs from "query-string"
 
 const Header = styled.span`
   display: flex;
@@ -97,9 +98,10 @@ const NetlifyForm = () => {
       "form-name": form.getAttribute("name"),
     }
 
+    console.log(encode(formData))
+    console.log(qs.stringify(formData))
     if (~document.location.host.indexOf("localhost")) {
       setFeedbackMessage("Thank you, your inquiry has been sent.")
-      resetForm()
       return
     } else {
       fetch("/", {
@@ -142,7 +144,6 @@ const NetlifyForm = () => {
         name="contact"
         method="POST"
         data-netlify="true"
-        data-netlify-recaptcha="true"
         netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
       >
@@ -193,13 +194,11 @@ const NetlifyForm = () => {
           />
         </div>
         {enableSubmission && (
-          <>
-            <CaptchaContainer
-              sitekey={process.env.GATSBY_RECAPTCHA_KEY}
-              onChange={handleRecaptcha}
-              theme="dark"
-            />
-          </>
+          <CaptchaContainer
+            sitekey={process.env.GATSBY_RECAPTCHA_KEY}
+            onChange={handleRecaptcha}
+            theme="dark"
+          />
         )}
         <input
           disabled={!enableSubmission}
