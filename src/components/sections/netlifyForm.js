@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import ReCAPTCHA from "react-google-recaptcha"
 import Alert from "react-bootstrap/Alert"
@@ -107,9 +108,10 @@ const NetlifyForm = () => {
       fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(formData),
+        body: qs.stringify(formData),
       })
-        .then(() => {
+        .then(res => {
+          console.log(res)
           setFeedbackMessage("Thank you, your inquiry has been sent.")
           setError(false)
           resetForm()
@@ -126,6 +128,10 @@ const NetlifyForm = () => {
 
   return (
     <>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src={`https://www.google.com/recaptcha/api.js?`} async defer />
+      </Helmet>
       <Header>
         <h2>Contact</h2>
       </Header>
