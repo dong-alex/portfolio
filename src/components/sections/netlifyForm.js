@@ -16,7 +16,6 @@ const CaptchaContainer = styled(ReCAPTCHA)`
 `
 
 const NetlifyForm = () => {
-  const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
   const [enableSubmission, setEnableSubmission] = useState(false)
@@ -26,7 +25,7 @@ const NetlifyForm = () => {
   const [error, setError] = useState(false)
 
   const isFormComplete = () => {
-    return name !== "" && email !== "" && message !== ""
+    return email !== "" && message !== ""
   }
 
   useEffect(() => {
@@ -35,7 +34,7 @@ const NetlifyForm = () => {
     } else {
       setEnableSubmission(false)
     }
-  }, [message, email, name])
+  }, [message, email])
 
   useEffect(() => {
     if (feedbackMessage !== "") {
@@ -55,10 +54,6 @@ const NetlifyForm = () => {
 
   const handleEmailChange = event => {
     setEmail(event.target.value)
-  }
-
-  const handleNameChange = event => {
-    setName(event.target.value)
   }
 
   const resetForm = () => {
@@ -88,36 +83,30 @@ const NetlifyForm = () => {
     const form = event.target
 
     let formData = {
-      name,
       email,
       message,
       "g-recaptcha-response": recaptcha,
       "form-name": form.getAttribute("name"),
     }
 
-    if (~document.location.host.indexOf("localhost")) {
-      setFeedbackMessage("Thank you, your inquiry has been sent.")
-      return
-    } else {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(formData),
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode(formData),
+    })
+      .then(res => {
+        setFeedbackMessage("Thank you, your inquiry has been sent.")
+        setError(false)
+        resetForm()
       })
-        .then(res => {
-          console.log(res)
-          setFeedbackMessage("Thank you, your inquiry has been sent.")
-          setError(false)
-          resetForm()
-        })
-        .catch(err => {
-          setFeedbackMessage(
-            "There was an error with your inquiry, please try again!"
-          )
-          setError(true)
-          alert(err)
-        })
-    }
+      .catch(err => {
+        setFeedbackMessage(
+          "There was an error with your inquiry, please try again!"
+        )
+        setError(true)
+        alert(err)
+      })
+
     event.preventDefault()
   }
 
@@ -140,11 +129,17 @@ const NetlifyForm = () => {
       <form
         name="contact"
         method="POST"
-        data-netlify="true"
-        data-netlify-recaptcha="true"
+        data-NetlifyForm
+        data-netlify-recaptcha
+        netlify-honeypot="required-name"
         onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
+        <p hidden aria-hidden>
+          <label>
+            Don’t fill this out if you're human: <input name="required-name" />
+          </label>
+        </p>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text">Email</span>
@@ -157,20 +152,6 @@ const NetlifyForm = () => {
             aria-describedby="email-field"
             value={email}
             onChange={handleEmailChange}
-          />
-        </div>
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Name</span>
-          </div>
-          <input
-            type="text"
-            class="form-control"
-            name="name"
-            aria-label="Name"
-            aria-describedby="name"
-            value={name}
-            onChange={handleNameChange}
           />
         </div>
         <div class="input-group mb-3">
