@@ -82,11 +82,11 @@ const NetlifyForm = () => {
   const handleSubmit = event => {
     event.preventDefault()
 
-    if (!recaptcha) {
-      setFeedbackMessage("Please complete the recaptcha")
-      setError(true)
-      return
-    }
+    // if (!recaptcha) {
+    //   setFeedbackMessage("Please complete the recaptcha")
+    //   setError(true)
+    //   return
+    // }
 
     const form = event.target
 
@@ -94,7 +94,7 @@ const NetlifyForm = () => {
       name,
       email,
       message,
-      "g-recaptcha-response": recaptcha,
+      // "g-recaptcha-response": recaptcha,
       "form-name": "contact",
     }
 
@@ -143,7 +143,7 @@ const NetlifyForm = () => {
         name="contact"
         method="POST"
         data-netlify="true"
-        data-netlify-recaptcha="true"
+        // data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
@@ -187,13 +187,13 @@ const NetlifyForm = () => {
             onChange={handleMessageChange}
           />
         </div>
-        {enableSubmission && (
+        {/* {enableSubmission && (
           <CaptchaContainer
             sitekey={process.env.GATSBY_RECAPTCHA_KEY}
             onChange={handleRecaptcha}
             theme="dark"
           />
-        )}
+        )} */}
         <input
           disabled={!enableSubmission}
           type="submit"
