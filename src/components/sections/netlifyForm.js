@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import { Helmet } from "react-helmet"
 import styled from "styled-components"
 import ReCAPTCHA from "react-google-recaptcha"
 import Alert from "react-bootstrap/Alert"
@@ -96,7 +95,7 @@ const NetlifyForm = () => {
       email,
       message,
       "g-recaptcha-response": recaptcha,
-      "form-name": form.getAttribute("name"),
+      "form-name": "contact",
     }
 
     if (~document.location.host.indexOf("localhost")) {
@@ -126,10 +125,6 @@ const NetlifyForm = () => {
 
   return (
     <>
-      <Helmet>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script src={`https://www.google.com/recaptcha/api.js?`} async defer />
-      </Helmet>
       <Header>
         <h2>Contact</h2>
       </Header>
@@ -149,15 +144,9 @@ const NetlifyForm = () => {
         method="POST"
         data-netlify="true"
         data-netlify-recaptcha="true"
-        netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
-        <p hidden aria-hidden="true">
-          <label>
-            Don’t fill this out if you're human: <input name="bot-field" />
-          </label>
-        </p>
         <div class="input-group mb-3">
           <div class="input-group-prepend">
             <span class="input-group-text">Email</span>
@@ -200,7 +189,7 @@ const NetlifyForm = () => {
         </div>
         {enableSubmission && (
           <CaptchaContainer
-            sitekey={process.env.GATSBY_RECAPTCHA_KEY}
+            sitekey={process.env.SITE_RECAPTCHA_KEY}
             onChange={handleRecaptcha}
             theme="dark"
           />

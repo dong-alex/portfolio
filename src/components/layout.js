@@ -68,11 +68,6 @@ const Layout = ({ children }) => {
           href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&family=Roboto+Mono:wght@300&display=swap"
           rel="stylesheet"
         />
-        <script
-          src={`https://www.google.com/recaptcha/api.js?`}
-          async
-          defer
-        ></script>
       </Helmet>
       <StyledNavbar bg="dark" fixed="top" expand="sm">
         <Brand>@dong-alex</Brand>
