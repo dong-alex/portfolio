@@ -94,7 +94,7 @@ const NetlifyForm = () => {
       name,
       email,
       message,
-      // "g-recaptcha-response": recaptcha,
+      "g-recaptcha-response": recaptcha,
       "form-name": "contact",
     }
 
@@ -143,7 +143,7 @@ const NetlifyForm = () => {
         name="contact"
         method="POST"
         data-netlify="true"
-        // data-netlify-recaptcha="true"
+        data-netlify-recaptcha="true"
         onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
@@ -194,6 +194,11 @@ const NetlifyForm = () => {
             theme="dark"
           />
         )} */}
+        <ReCAPTCHA
+          sitekey={process.env.GATSBY_RECAPTCHA_KEY}
+          onChange={handleRecaptcha}
+          theme="dark"
+        />
         <input
           disabled={!enableSubmission}
           type="submit"
