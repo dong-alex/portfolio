@@ -99,8 +99,6 @@ const NetlifyForm = () => {
       "form-name": form.getAttribute("name"),
     }
 
-    console.log(encode(formData))
-    console.log(qs.stringify(formData))
     if (~document.location.host.indexOf("localhost")) {
       setFeedbackMessage("Thank you, your inquiry has been sent.")
       return
@@ -150,6 +148,7 @@ const NetlifyForm = () => {
         name="contact"
         method="POST"
         data-netlify="true"
+        data-netlify-recaptcha="true"
         netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
       >
