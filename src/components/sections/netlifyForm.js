@@ -80,15 +80,11 @@ const NetlifyForm = () => {
   }
 
   const handleSubmit = event => {
-    event.preventDefault()
-
-    // if (!recaptcha) {
-    //   setFeedbackMessage("Please complete the recaptcha")
-    //   setError(true)
-    //   return
-    // }
-
-    const form = event.target
+    if (!recaptcha) {
+      setFeedbackMessage("Please complete the recaptcha")
+      setError(true)
+      return
+    }
 
     let formData = {
       name,
@@ -98,29 +94,26 @@ const NetlifyForm = () => {
       "form-name": "contact",
     }
 
-    if (~document.location.host.indexOf("localhost")) {
-      setFeedbackMessage("Thank you, your inquiry has been sent.")
-      return
-    } else {
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: qs.stringify(formData),
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encode(formData),
+    })
+      .then(res => {
+        console.log(res)
+        setFeedbackMessage("Thank you, your inquiry has been sent.")
+        setError(false)
+        resetForm()
       })
-        .then(res => {
-          console.log(res)
-          setFeedbackMessage("Thank you, your inquiry has been sent.")
-          setError(false)
-          resetForm()
-        })
-        .catch(err => {
-          setFeedbackMessage(
-            "There was an error with your inquiry, please try again!"
-          )
-          setError(true)
-          alert(err)
-        })
-    }
+      .catch(err => {
+        setFeedbackMessage(
+          "There was an error with your inquiry, please try again!"
+        )
+        setError(true)
+        alert(err)
+      })
+
+    event.preventDefault()
   }
 
   return (
@@ -187,18 +180,13 @@ const NetlifyForm = () => {
             onChange={handleMessageChange}
           />
         </div>
-        {/* {enableSubmission && (
+        {enableSubmission && (
           <CaptchaContainer
             sitekey={process.env.GATSBY_RECAPTCHA_KEY}
             onChange={handleRecaptcha}
             theme="dark"
           />
-        )} */}
-        <ReCAPTCHA
-          sitekey={process.env.GATSBY_RECAPTCHA_KEY}
-          onChange={handleRecaptcha}
-          theme="dark"
-        />
+        )}
         <input
           disabled={!enableSubmission}
           type="submit"
