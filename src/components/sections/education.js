@@ -54,7 +54,7 @@ const EducationSection = () => {
   return (
     <EducationContainer fluid>
       <Header>
-        <h2>Education</h2>
+        <h1>Education</h1>
       </Header>
       <EducationCard className="text-center">
         <ImageContainer>

@@ -7,7 +7,10 @@ import SEO from "../components/seo"
 const AboutPage = () => {
   return (
     <Layout>
-      <SEO title="About" />
+      <SEO
+        title="About"
+        description="Learn about my education from the University of Alberta, and my growing skillsets."
+      />
       <EducationSection />
       <SkillsSection />
     </Layout>

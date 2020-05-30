@@ -45,7 +45,7 @@ const SkillsSection = () => {
   return (
     <>
       <Header>
-        <h2>Skillset</h2>
+        <h1>Skillset</h1>
       </Header>
       <Container fluid>
         <Row>
