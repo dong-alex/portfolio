@@ -11,12 +11,12 @@ const {
 const isNetlifyProduction = NETLIFY_ENV === "production"
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL
 
-console.log(NETLIFY_DEPLOY_URL, NETLIFY_ENV)
 module.exports = {
   siteMetadata: {
     title: `Personal Portfolio`,
     description: `Work Experience, Projects, Connect`,
     siteUrl,
+    defaultImage: "/personal-logo.svg",
     author: `@dong-alex`,
   },
   plugins: [
@@ -65,7 +65,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/data/images/personal-logo.svg`, // This path is relative to the root of the site.
+        icon: `static/personal-logo.svg`, // This path is relative to the root of the site.
       },
     },
     {
