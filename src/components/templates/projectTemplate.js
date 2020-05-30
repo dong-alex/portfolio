@@ -77,9 +77,9 @@ const ProjectTemplate = ({
 }) => {
   return (
     <CardContainer>
-      <HoverLink to={`/projects/${slug}`}>
-        <ProjectImage fluid={imageData} alt={title} draggable={false} />
-      </HoverLink>
+      {/* <HoverLink to={`/projects/${slug}`}> */}
+      <ProjectImage fluid={imageData} alt={title} draggable={false} />
+      {/* </HoverLink> */}
       <ProjectHeader as="h5">{title}</ProjectHeader>
       <CardBody className="card-body">
         <p className="card-text">{description}</p>
