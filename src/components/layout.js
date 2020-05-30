@@ -2,29 +2,25 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import Loadable from "react-loadable"
 import Navbar from "react-bootstrap/Navbar"
+import Spinner from "react-bootstrap/Spinner"
 import Nav from "react-bootstrap/Nav"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 import styled from "styled-components"
 
 const NavLink = styled(AniLink)`
-  margin-right: 1rem;
   display: inline-block;
   color: #ffffff;
   font-family: "Roboto Mono", monospace;
+
+  :not(:last-child) {
+    margin-right: 1rem;
+  }
 `
 
 const Brand = styled(Navbar.Brand)`
   color: white !important;
   margin-right: 3rem;
   font-family: "Roboto Mono", monospace;
-`
-
-const StyledNavbar = styled(Navbar)`
-  -moz-box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.6);
-  box-shadow: 8px 8px 5px rgba(0, 0, 0, 0.6);
-
-  background-color: #000000;
 `
 
 const StyledNav = styled(Nav)`
@@ -48,10 +44,34 @@ const Container = styled.main`
   font-family: Balsamiq Sans;
 `
 
+const LoadingContainer = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 9999;
+  color: white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+
+const StyledSpinner = styled(Spinner)`
+  height: 5rem;
+  width: 5rem;
+`
+
 const LoadedParticles = Loadable({
   loader: () => import("./particlesBackground"),
   loading() {
-    return <div />
+    return (
+      <LoadingContainer>
+        <StyledSpinner animation="border" variant="light" />
+      </LoadingContainer>
+    )
   },
 })
 
@@ -69,7 +89,7 @@ const Layout = ({ children }) => {
           rel="stylesheet"
         />
       </Helmet>
-      <StyledNavbar bg="dark" fixed="top" expand="sm">
+      <Navbar bg="dark" fixed="top" expand="sm">
         <NavLink paintDrip hex="#212121" to="/">
           <Brand>@dong-alex</Brand>
         </NavLink>
@@ -93,9 +113,11 @@ const Layout = ({ children }) => {
             </NavLink>
           </StyledNav>
         </Navbar.Collapse>
-      </StyledNavbar>
-      <Container>{children}</Container>
-      <LoadedParticles />
+      </Navbar>
+      <Container>
+        <LoadedParticles />
+        {children}
+      </Container>
     </>
   )
 }
