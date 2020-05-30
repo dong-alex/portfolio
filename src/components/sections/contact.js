@@ -12,6 +12,7 @@ const ContactContainer = styled(Container)`
 
 const ContactLogo = styled.img`
   margin: 2rem;
+  object-fit: cover;
 `
 
 const ContactLink = styled.a`
@@ -22,6 +23,10 @@ const ContactLink = styled.a`
       transform: scale(1.1);
     }
     outline: solid 1px #ffffff;
+  }
+
+  @media only screen and (max-width: 468px) {
+    margin: 0;
   }
 `
 

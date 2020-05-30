@@ -20,7 +20,7 @@ const Nav = styled.ul`
   align-items: center;
   height: 100%;
 
-  @media (max-width: 1240px) {
+  @media only screen and (max-width: 1240px) {
     flex-direction: row;
   }
 `
@@ -43,7 +43,7 @@ const LogoItem = styled.li`
     min-width: 2rem;
   }
 
-  @media (max-width: 1240px) {
+  @media only screen and (max-width: 1240px) {
     display: none;
   }
 `
@@ -74,7 +74,7 @@ const NavLink = styled(AniLink)`
     text-style: unset;
   }
 
-  @media (max-width: 1240px) {
+  @media only screen and (max-width: 1240px) {
     justify-content: center;
   }
 `
@@ -100,7 +100,7 @@ const NavigationBar = styled.nav`
     width: 100%;
   }
 
-  @media (max-width: 1240px) {
+  @media only screen and (max-width: 1240px) {
     bottom: 0;
     width: 100vw;
     height: 5rem;
@@ -110,7 +110,7 @@ const NavigationBar = styled.nav`
     }
   }
 
-  @media (min-width: 1240px) {
+  @media only screen and (min-width: 1240px) {
     top: 0;
     width: 5rem;
     height: 100%;
