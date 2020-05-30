@@ -7,7 +7,7 @@ import RedirectLink from "../components/redirectLink"
 
 const HomeContainer = styled(Container)`
   display: flex;
-  height: 70vh;
+  height: 70%;
   margin: 0;
   justify-content: center;
   flex-direction: column;
