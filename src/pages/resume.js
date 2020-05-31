@@ -1,7 +1,6 @@
 import React from "react"
 import Container from "react-bootstrap/Container"
 import Button from "react-bootstrap/Button"
-import Image from "gatsby-image"
 import styled from "styled-components"
 import Layout from "../components/layout"
 import useResume from "../components/hooks/useResume"
@@ -14,42 +13,34 @@ const ResumeLink = styled.a`
   color: #ffffff;
 `
 
-const DownloadButton = styled(Button)``
-
 const Header = styled.h1`
   text-align: center;
   margin-bottom: 2rem;
 `
 
-const InterestHeader = styled.h4`
-  margin: 2rem 0 2rem 0;
-  text-align: center;
+const ResumeContainer = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 const ResumePage = () => {
-  const { image, publicURL } = useResume()
+  const { publicURL } = useResume()
+
   return (
     <Layout>
       <SEO
         title="Resume"
         description="View my work experiences as a growing software developer during my university career."
       />
-      <Container
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-        }}
-      >
-        <Header>Resume</Header>
-        <Image fluid={image} alt="resume" />
-        <InterestHeader>Interested in what you see?</InterestHeader>
+      <ResumeContainer>
+        <Header>Interested in what you see?</Header>
         <ResumeLink href={publicURL} download>
-          <DownloadButton variant="secondary" size="lg">
+          <Button variant="secondary" size="lg">
             Download Resume
-          </DownloadButton>
+          </Button>
         </ResumeLink>
-      </Container>
+      </ResumeContainer>
     </Layout>
   )
 }

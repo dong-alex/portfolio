@@ -3,20 +3,13 @@ import { useStaticQuery, graphql } from "gatsby"
 const useResume = () => {
   const image = useStaticQuery(graphql`
     query {
-      preview: file(relativePath: { eq: "images/resume-preview.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 800, quality: 100) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
       resume: file(relativePath: { eq: "resume-copy.pdf" }) {
         publicURL
       }
     }
   `)
+
   return {
-    image: image.preview.childImageSharp.fluid,
     publicURL: image.resume.publicURL,
   }
 }
