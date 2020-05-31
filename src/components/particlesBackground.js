@@ -11,7 +11,7 @@ const ParticleBackground = () => {
           line_linked: {
             shadow: {
               enable: true,
-              color: "#3CA9D1",
+              color: "#ffffff",
               blur: 5,
             },
           },
@@ -38,7 +38,7 @@ const ParticleBackground = () => {
         left: "0",
         right: "0",
         bottom: "0",
-        backgroundColor: "#212121",
+        backgroundColor: "#000000",
         zIndex: "-1",
       }}
     />
