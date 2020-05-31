@@ -55,6 +55,7 @@ module.exports = {
       options: {
         name: `data`,
         path: `${__dirname}/src/data/`,
+        ignore: ["work.json", "resume-copy.pdf"],
       },
     },
     `gatsby-transformer-sharp`,

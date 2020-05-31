@@ -15,6 +15,10 @@ const CaptchaContainer = styled(ReCAPTCHA)`
   margin-bottom: 1rem;
 `
 
+const FormContainer = styled.div`
+  margin: 0 1rem;
+`
+
 const NetlifyForm = () => {
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
@@ -110,7 +114,7 @@ const NetlifyForm = () => {
   }
 
   return (
-    <>
+    <FormContainer>
       <Header>
         <h2>Contact</h2>
       </Header>
@@ -179,7 +183,7 @@ const NetlifyForm = () => {
           class="btn btn-dark btn-block"
         />
       </form>
-    </>
+    </FormContainer>
   )
 }
 
