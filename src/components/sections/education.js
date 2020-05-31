@@ -52,7 +52,7 @@ const EducationSection = () => {
   const { courses, logo, degree } = useEducation()
 
   return (
-    <EducationContainer fluid>
+    <EducationContainer fluid id="education-section">
       <Header>
         <h1>Education</h1>
       </Header>

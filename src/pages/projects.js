@@ -58,7 +58,7 @@ const ProjectsPage = () => {
         title="Projects"
         description="Explore the personal projects and the technologies used. View a project with their Github links provided to see how it works."
       />
-      <ProjectsContainer className="container">
+      <ProjectsContainer className="container" id="projects-section">
         <h1>Projects</h1>
       </ProjectsContainer>
       <Container fluid>

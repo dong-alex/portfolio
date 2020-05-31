@@ -40,7 +40,7 @@ const SkillsSection = () => {
   ]
 
   return (
-    <>
+    <div id="skills-section">
       <Header>
         <h1>Skillset</h1>
       </Header>
@@ -64,7 +64,7 @@ const SkillsSection = () => {
           ))}
         </Row>
       </Container>
-    </>
+    </div>
   )
 }
 

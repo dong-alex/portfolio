@@ -27,7 +27,7 @@ const ContactLink = styled.a`
 
 const ContactSection = () => {
   return (
-    <ContactContainer>
+    <ContactContainer id="contact-section">
       <ContactLink
         href="https://github.com/dong-alex"
         target="_blank"
