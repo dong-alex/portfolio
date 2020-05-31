@@ -1,9 +1,9 @@
 import React from "react"
 import Card from "react-bootstrap/Card"
-import { Link } from "gatsby"
 import Image from "gatsby-image"
 import styled from "styled-components"
 import LogoItem from "../logoItem"
+import GithubLogo from "../../static/github-logo.svg"
 
 const CardContainer = styled(Card)`
   width: 20rem;
@@ -26,16 +26,9 @@ const TechnologyGroup = styled.ul`
   }
 `
 
-const HoverLink = styled(Link)`
-  &:hover {
-    ${Image} & {
-      transform: scale(1.1);
-    }
-  }
-`
-
 const ProjectLinks = styled.div`
-  margin: 10px 0 5px 0;
+  margin: 0;
+  padding-top: 1rem;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -70,16 +63,13 @@ const ProjectTemplate = ({
   slug,
   description,
   github,
-  githubLogo,
   title,
   technologies,
   imageData,
 }) => {
   return (
     <CardContainer>
-      {/* <HoverLink to={`/projects/${slug}`}> */}
       <ProjectImage fluid={imageData} alt={title} draggable={false} />
-      {/* </HoverLink> */}
       <ProjectHeader as="h5">{title}</ProjectHeader>
       <CardBody className="card-body">
         <p className="card-text">{description}</p>
@@ -100,9 +90,8 @@ const ProjectTemplate = ({
         </TechnologyGroup>
       )}
       <ProjectLinks>
-        <span>View on Github</span>
         <HoverLogo href={github} target="_blank" rel="noreferrer">
-          <Image fixed={githubLogo} alt="github" />
+          <img src={GithubLogo} width="64px" alt="Github Logo" />
         </HoverLogo>
       </ProjectLinks>
     </CardContainer>

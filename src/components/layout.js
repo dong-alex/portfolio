@@ -55,6 +55,7 @@ const LoadingContainer = styled.div`
   color: white;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `
@@ -64,12 +65,18 @@ const StyledSpinner = styled(Spinner)`
   width: 5rem;
 `
 
+const LoadingMessage = styled.span`
+  color: #ffffff;
+  font-size: 2rem;
+`
+
 const LoadedParticles = Loadable({
   loader: () => import("./particlesBackground"),
   loading() {
     return (
       <LoadingContainer>
         <StyledSpinner animation="border" variant="light" />
+        <LoadingMessage>Loading...</LoadingMessage>
       </LoadingContainer>
     )
   },
@@ -108,9 +115,9 @@ const Layout = ({ children }) => {
             <NavLink paintDrip hex="#212121" to="/connect/">
               Connect
             </NavLink>
-            <NavLink paintDrip hex="#212121" to="/resume">
+            {/* <NavLink paintDrip hex="#212121" to="/resume">
               Resume
-            </NavLink>
+            </NavLink> */}
           </StyledNav>
         </Navbar.Collapse>
       </Navbar>

@@ -41,6 +41,10 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-exclude",
+      options: { paths: ["/resume"] },
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-transition-link`,

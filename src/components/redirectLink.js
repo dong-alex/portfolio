@@ -21,9 +21,7 @@ const RedirectSpan = styled.span`
   display: flex;
   align-items: center;
   color: #ffffff;
-  font-size: 1.5rem;
   text-decoration: none;
-  user-select: none;
   text-transform: uppercase;
 `
 
