@@ -22,15 +22,6 @@ const ParticleBackground = () => {
             value: 3,
           },
         },
-        interactivity: {
-          detect_on: "window",
-          events: {
-            onhover: {
-              enable: true,
-              mode: "repulse",
-            },
-          },
-        },
       }}
       style={{
         position: "absolute",
