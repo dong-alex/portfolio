@@ -13,7 +13,7 @@ const ProjectsContainer = styled.div`
 `
 
 const ProjectsPage = () => {
-  const { projects, github } = useStaticQuery(
+  const { projects } = useStaticQuery(
     graphql`
       query {
         projects: allProjectsJson {
@@ -46,19 +46,11 @@ const ProjectsPage = () => {
             }
           }
         }
-        github: file(relativePath: { eq: "images/github-logo.png" }) {
-          childImageSharp {
-            fixed(width: 64, height: 64) {
-              ...GatsbyImageSharpFixed_noBase64
-            }
-          }
-        }
       }
     `
   )
 
   const personalProjects = projects.edges
-  const githubLogo = github.childImageSharp.fixed
 
   return (
     <Layout>
@@ -68,7 +60,6 @@ const ProjectsPage = () => {
       />
       <ProjectsContainer className="container">
         <h1>Projects</h1>
-        <h4>Click on any icon for more details</h4>
       </ProjectsContainer>
       <Container fluid>
         <Row>
@@ -90,7 +81,6 @@ const ProjectsPage = () => {
                   slug={slug}
                   technologies={technologies}
                   github={githubURL}
-                  githubLogo={githubLogo}
                   imageData={imageData}
                 />
               </Col>
