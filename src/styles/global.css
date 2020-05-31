@@ -12,7 +12,6 @@ div#___gatsby {
 }
 
 img {
-  user-drag: none;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-drag: none;
@@ -41,6 +40,11 @@ h2,
 h3,
 h4 {
   color: #ffffff;
+  text-decoration: none;
+}
+
+h1 {
+  font-style: bold;
 }
 
 h1 {
@@ -71,16 +75,6 @@ h1 {
 
   /* Safari, Chrome and Opera > 12.1 */
   @-webkit-keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  /* Internet Explorer */
-  @-ms-keyframes fadein {
     from {
       opacity: 0;
     }
@@ -136,16 +130,6 @@ h1 {
 
   /* Safari, Chrome and Opera > 12.1 */
   @-webkit-keyframes fadein {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  /* Internet Explorer */
-  @-ms-keyframes fadein {
     from {
       opacity: 0;
     }

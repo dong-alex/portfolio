@@ -62,9 +62,12 @@ const ProjectsPage = () => {
 
   return (
     <Layout>
-      <SEO title="Projects" />
+      <SEO
+        title="Projects"
+        description="Explore the personal projects and the technologies used. View a project with their Github links provided to see how it works."
+      />
       <ProjectsContainer className="container">
-        <h2>Projects</h2>
+        <h1>Projects</h1>
         <h4>Click on any icon for more details</h4>
       </ProjectsContainer>
       <Container fluid>

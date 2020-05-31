@@ -27,9 +27,6 @@ const TechnologyItem = styled(ListGroup.Item)`
 const Header = styled.span`
   display: flex;
   justify-content: center;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 `
 
 const SkillsSection = () => {

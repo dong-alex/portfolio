@@ -11,12 +11,14 @@ const Header = styled.span`
 `
 
 const ConnectPage = () => {
-
   return (
     <Layout>
-      <SEO title="Connect" />
+      <SEO
+        title="Connect"
+        description="If you have any questions or concerns, contact me for more information."
+      />
       <Header>
-        <h2>Connect</h2>
+        <h1>Connect</h1>
       </Header>
       <ContactSection />
       <NetlifyForm />

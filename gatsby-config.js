@@ -65,7 +65,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `static/personal-logo.svg`, // This path is relative to the root of the site.
+        icon: `src/data/images/personal-logo.svg`, // This path is relative to the root of the site.
       },
     },
     {

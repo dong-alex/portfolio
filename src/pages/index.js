@@ -12,16 +12,15 @@ const HomeContainer = styled(Container)`
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-
-  h1 {
-    user-select: none;
-  }
 `
 
 const IndexPage = () => {
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO
+        title="Home"
+        description="The website of Alex Dong, a recent computer science graduate from the University of Alberta. Learn about his expertise and education."
+      />
       <HomeContainer>
         <h1>Hi, I'm Alex, a software developer from Edmonton, Alberta.</h1>
         <RedirectLink text="About me" to="/about" />

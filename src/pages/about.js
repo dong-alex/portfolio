@@ -9,7 +9,7 @@ const AboutPage = () => {
     <Layout>
       <SEO
         title="About"
-        description="Learn about my education from the University of Alberta, and my growing skillsets."
+        description="Learn about education from the University of Alberta and my growing skillsets in software development."
       />
       <EducationSection />
       <SkillsSection />
