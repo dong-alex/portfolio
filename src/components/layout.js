@@ -67,6 +67,14 @@ const LoadingMessage = styled.span`
   font-size: 2rem;
 `
 
+const Footer = styled.footer`
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  bottom: 0;
+`
+
 const LoadedParticles = Loadable({
   loader: () => import("./particlesBackground"),
   loading() {
@@ -109,7 +117,7 @@ const Layout = ({ children }) => {
       </Navbar>
       <LoadedParticles />
       <Container>{children}</Container>
-      <footer>© Alex Dong 2020</footer>
+      <Footer>© Alex Dong 2020</Footer>
     </>
   )
 }
