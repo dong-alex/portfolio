@@ -16,6 +16,8 @@ const ContactLogo = styled.img`
 
 const ContactLink = styled.a`
   margin: 1rem;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     img {
