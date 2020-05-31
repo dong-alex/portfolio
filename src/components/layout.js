@@ -70,7 +70,8 @@ const LoadingMessage = styled.span`
 const Footer = styled.footer`
   position: fixed;
   width: 100%;
-  text-align: center;
+  text-align: right;
+  padding-right: 1rem;
   left: 0;
   bottom: 0;
 `
