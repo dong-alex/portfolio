@@ -45,7 +45,9 @@ const ResumePage = () => {
         <Image fluid={image} alt="resume" />
         <InterestHeader>Interested in what you see?</InterestHeader>
         <ResumeLink href={publicURL} download>
-          <DownloadButton size="lg">Download Resume</DownloadButton>
+          <DownloadButton variant="secondary" size="lg">
+            Download Resume
+          </DownloadButton>
         </ResumeLink>
       </Container>
     </Layout>
