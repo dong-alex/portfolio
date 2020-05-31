@@ -37,7 +37,7 @@ const StyledNav = styled(Nav)`
 
 const Container = styled.main`
   margin: 6rem auto 6rem auto;
-  max-width: 800px;
+  max-width: 900px;
   height: 100%;
 `
 
@@ -107,10 +107,9 @@ const Layout = ({ children }) => {
           </StyledNav>
         </Navbar.Collapse>
       </Navbar>
-      <Container>
-        <LoadedParticles />
-        {children}
-      </Container>
+      <LoadedParticles />
+      <Container>{children}</Container>
+      <footer>© Alex Dong 2020</footer>
     </>
   )
 }
