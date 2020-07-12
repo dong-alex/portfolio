@@ -30,13 +30,14 @@ const Header = styled.span`
 `
 
 const SkillsSection = () => {
-  const { backend, frontend, database, tools } = useTechnicalSkills()
+  const { backend, frontend, database, tools, cloud } = useTechnicalSkills()
 
   const layout = [
     { title: "Front-end", data: frontend },
     { title: "Back-end", data: backend },
     { title: "Database", data: database },
     { title: "Tools", data: tools },
+    { title: "Cloud", data: cloud}
   ]
 
   return (

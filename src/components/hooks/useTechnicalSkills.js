@@ -45,6 +45,16 @@ const useTechnicalSkills = () => {
               }
             }
           }
+          cloud {
+            name
+            logo {
+              childImageSharp {
+                fixed(height: 32, width: 32, quality: 100, fit: INSIDE) {
+                  ...GatsbyImageSharpFixed_noBase64
+                }
+              }
+            }
+          }
         }
       }
     }

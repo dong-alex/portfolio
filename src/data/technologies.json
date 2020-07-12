@@ -88,5 +88,10 @@
     "id": "TYPESCRIPT",
     "name": "TypeScript",
     "logo": "./images/typescript-logo.png"
+  },
+  {
+    "id": "FIREBASE",
+    "name": "Firebase",
+    "logo": "./images/firebase.png"
   }
 ]

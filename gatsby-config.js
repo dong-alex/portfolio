@@ -86,5 +86,6 @@ module.exports = {
     "DataJson.backend": "TechnologiesJson",
     "DataJson.database": "TechnologiesJson",
     "DataJson.tools": "TechnologiesJson",
+    "DataJson.cloud": "TechnologiesJson",
   },
 }

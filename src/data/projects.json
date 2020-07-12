@@ -35,14 +35,14 @@
     "extra": {}
   },
   {
-    "title": "Kijiji Monitor",
-    "description": "Full-stack web scraping application to monitor multiple car listings in one screen. Save time by having all the vehicles you are interested in collected in one place to check on.",
-    "githubURL": "https://github.com/dong-alex/kijiji-watcher",
-    "slug": "kijiji-monitor",
+    "title": "Cloud Listings",
+    "description": "Full-stack web scraping application to monitor multiple car listings in one screen from Kijiji. Save time by having all the vehicles you are interested in collected in one place to check on.",
+    "githubURL": "https://github.com/dong-alex/cloud-listings-react-client",
+    "slug": "cloud-listings",
     "image": {
       "publicURL": "./images/car-logo.png"
     },
-    "technologies": ["FLASK", "REACT", "MATERIAL-UI"],
+    "technologies": ["REACT", "MATERIAL-UI", "FIREBASE"],
     "extra": {}
   }
 ]
